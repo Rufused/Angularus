@@ -11,9 +11,9 @@ export class UserService {
   constructor(private httpClient:HttpClient) {
   }
   getAllUsers():Observable<IUser[]>{
-    return this.httpClient.get<IUser[]>(this.url);
+    return this.httpClient.get<IUser[]>(this.url + 'users');
   }
   getUsersById(id:number):Observable<IUser>{
-    return this.httpClient.get<IUser>(this.url + '/' + id);
+    return this.httpClient.get<IUser>(this.url + 'users' + '/' + id);
   }
 }
